@@ -1,5 +1,11 @@
 # E.V. — Voice-First Hackathon Command Center
 
+[![AssemblyAI Hackathon](https://img.shields.io/badge/AssemblyAI-Voice%20Agent%20Hackathon-00D4AA?style=for-the-badge&logo=assemblyai)](https://lablab.ai/ai-hackathons/assemblyai-voice-agent-hackathon)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
+![E.V. Demo](assets/demo.gif)
+
 Built for the [AssemblyAI Voice Agent Hackathon](https://lablab.ai/ai-hackathons/assemblyai-voice-agent-hackathon) (Sept 1–30, 2026).
 
 E.V. is a real-time voice agent, built entirely on AssemblyAI's **Voice Agent
@@ -7,6 +13,8 @@ API** (one WebSocket = STT + turn detection + LLM + TTS + tool calling), that
 lets you capture tasks and notes hands-free while you're heads-down building —
 then gives you a spoken briefing on demand. Optionally, newly-added tasks
 mirror into an existing Notion workspace.
+
+> **Watch the demo:** [YouTube](https://youtube.com/your-demo-link) | [Loom](https://loom.com/your-demo-link) *(add links after recording)*
 
 ## Why this project
 
@@ -68,19 +76,26 @@ it and what to say about the result out loud.
 
 ## Architecture
 
-```
-mic --> input.audio events --> AssemblyAI Voice Agent API
-                                  (STT + turn detection + LLM)
-                                          |
-                                   tool.call events
-                                          |
-                          tools.py -> storage.py (JSON) / vision.py (Claude)
-                                          |
-                                (optional) notion_sync.py
-                                          |
-                                   tool.result sent back
-                                          |
-                                reply.audio events --> speaker
+![Architecture Flow](assets/architecture.gif)
+
+```mermaid
+flowchart LR
+    Mic[🎤 Mic] -->|24kHz PCM| SD[sounddevice]
+    SD -->|WebSocket| AA[AssemblyAI Voice Agent API]
+    AA -->|STT + Turn Detection + LLM + TTS| Tool[Tool Calls]
+    Tool -->|dispatch| Tools[tools.py]
+    Tools -->|JSON| Storage[(data/*.json)]
+    Tools -->|Vision| Vision[vision.py]
+    Tools -->|Sync| Notion[notion_sync.py]
+    Storage -->|result| Tool
+    Vision -->|result| Tool
+    Notion -->|result| Tool
+    Tool -->|tool.result| AA
+    AA -->|reply.audio| Speaker[🔊 Speaker]
+    
+    style AA fill:#00D4AA,color:#000
+    style Mic fill:#FF6B6B,color:#fff
+    style Speaker fill:#4ECDC4,color:#fff
 ```
 
 | File | Purpose |
@@ -129,6 +144,18 @@ python agent.py
 
 Speak once you see `Session ready`. Use headphones if possible — speaker
 playback into an open mic can trigger false interruptions.
+
+## Features in Action
+
+| Feature | Demo |
+|---------|------|
+| **Proactive Briefing** | ![Briefing](assets/briefing.gif) |
+| **Barge-in / Interrupt** | ![Barge-in](assets/bargein.gif) |
+| **Voice Switching** | ![Voice Switch](assets/voice-switch.gif) |
+| **Screen Reading** | ![Screen Read](assets/screen-read.gif) |
+| **Task/Note CRUD** | ![Tasks](assets/tasks.gif) |
+
+*Record short 5-10s GIFs for each feature using [ScreenToGif](https://www.screentogif.com/) or [Peek](https://github.com/phw/peek) and place in `assets/` folder.*
 
 ## Demo script (for the submission video)
 
@@ -208,3 +235,49 @@ Ideas if there's time left before the deadline:
   in the spoken briefing or the proactive greeting.
 - Deploy via AssemblyAI's browser or Twilio channel instead of running
   locally, for a shareable demo link.
+
+## Quick Start (Animated)
+
+![Quick Start](assets/quickstart.gif)
+
+```bash
+# 1. Clone & enter
+git clone https://github.com/shiv2803/ev-voice-agent.git
+cd ev-voice-agent
+
+# 2. Setup venv
+python -m venv venv
+venv\Scripts\activate          # Windows
+# source venv/bin/activate     # macOS/Linux
+
+# 3. Install deps
+pip install -r requirements.txt
+
+# 4. Configure API key
+cp .env.example .env
+# edit .env → add ASSEMBLYAI_API_KEY
+
+# 5. Run E.V.
+python agent.py
+```
+
+*Record a 15-30s GIF of the full setup-to-run flow.*
+
+## Contributing
+
+PRs welcome! Ideas:
+- 🎤 Add more voices / languages
+- 🔌 Plugin SDK for custom tools
+- 📱 Browser / Twilio deployment
+- 🧠 Offline STT fallback (whisper.cpp)
+
+## License
+
+MIT — see [LICENSE](LICENSE) for details.
+
+---
+
+<p align="center">
+  <b>Built with ❤️ for the AssemblyAI Voice Agent Hackathon</b><br>
+  <sub>Team <b>Barge-In</b> • Deadline: Sept 30, 2026</sub>
+</p>
