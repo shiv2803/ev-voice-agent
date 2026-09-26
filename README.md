@@ -26,43 +26,108 @@
         <stop offset="0.7" stop-color="#A78BFA"/>
         <stop offset="1" stop-color="#34D399"/>
       </linearGradient>
+      <linearGradient id="waveFlow" x1="40" y1="110" x2="900" y2="110" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#22D3EE" stop-opacity="0"/>
+        <stop offset="0.3" stop-color="#22D3EE" stop-opacity="1"/>
+        <stop offset="0.7" stop-color="#34D399" stop-opacity="1"/>
+        <stop offset="1" stop-color="#34D399" stop-opacity="0"/>
+      </linearGradient>
     </defs>
 
     <rect width="980" height="260" rx="26" fill="url(#bgGlow)"/>
+    
+    <!-- Animated background glow circles -->
     <g opacity="0.18">
-      <circle cx="150" cy="130" r="120" fill="#38BDF8"/>
-      <circle cx="820" cy="150" r="150" fill="#A78BFA"/>
-      <circle cx="500" cy="40" r="90" fill="#34D399"/>
+      <circle cx="150" cy="130" r="120" fill="#38BDF8">
+        <animate attributeName="r" values="120;140;120" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.18;0.3;0.18" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="820" cy="150" r="150" fill="#A78BFA">
+        <animate attributeName="r" values="150;170;150" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.18;0.3;0.18" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="500" cy="40" r="90" fill="#34D399">
+        <animate attributeName="r" values="90;110;90" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.18;0.3;0.18" dur="6s" repeatCount="indefinite"/>
+      </circle>
     </g>
 
-    <path d="M60 134C130 134 130 76 200 76C270 76 270 170 340 170C410 170 410 92 480 92C550 92 550 165 620 165C690 165 690 96 760 96C830 96 830 132 900 132" stroke="url(#wave)" stroke-width="5" stroke-linecap="round"/>
+    <!-- Animated wave path with flowing gradient -->
+    <path id="wavePath" d="M60 134C130 134 130 76 200 76C270 76 270 170 340 170C410 170 410 92 480 92C550 92 550 165 620 165C690 165 690 96 760 96C830 96 830 132 900 132" 
+          stroke="url(#wave)" stroke-width="5" stroke-linecap="round" fill="none" stroke-dasharray="1000" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="0;-1000" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <!-- Second wave layer with flowing highlight -->
+    <path d="M60 134C130 134 130 76 200 76C270 76 270 170 340 170C410 170 410 92 480 92C550 92 550 165 620 165C690 165 690 96 760 96C830 96 830 132 900 132" 
+          stroke="url(#waveFlow)" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="200 400" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="0;-600" dur="2s" repeatCount="indefinite"/>
+    </path>
 
+    <!-- MIC node with pulse -->
     <g>
-      <circle cx="80" cy="134" r="26" fill="#0F172A" stroke="#7DD3FC" stroke-width="2"/>
+      <circle cx="80" cy="134" r="26" fill="#0F172A" stroke="#7DD3FC" stroke-width="2">
+        <animate attributeName="stroke-width" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="26;30;26" dur="2s" repeatCount="indefinite"/>
+      </circle>
       <text x="80" y="141" text-anchor="middle" fill="#E2E8F0" font-size="11" font-family="Arial" font-weight="700">MIC</text>
 
-      <circle cx="210" cy="76" r="18" fill="#22D3EE" opacity="0.9"/>
-      <circle cx="340" cy="170" r="18" fill="#A78BFA" opacity="0.9"/>
-      <circle cx="620" cy="165" r="18" fill="#34D399" opacity="0.9"/>
+      <!-- Animated data packets flowing from MIC -->
+      <circle cx="130" cy="76" r="8" fill="#22D3EE" opacity="0.9">
+        <animateMotion path="M130 76C160 76 160 170 200 170C240 170 240 92 280 92C320 92 320 165 360 165C400 165 400 96 440 96C480 96 480 132 520 132" dur="4s" repeatCount="indefinite" rotate="auto"/>
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="130" cy="76" r="6" fill="#A78BFA" opacity="0.9">
+        <animateMotion path="M130 76C160 76 160 170 200 170C240 170 240 92 280 92C320 92 320 165 360 165C400 165 400 96 440 96C480 96 480 132 520 132" begin="1.3s" dur="4s" repeatCount="indefinite" rotate="auto"/>
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="130" cy="76" r="5" fill="#34D399" opacity="0.9">
+        <animateMotion path="M130 76C160 76 160 170 200 170C240 170 240 92 280 92C320 92 320 165 360 165C400 165 400 96 440 96C480 96 480 132 520 132" begin="2.6s" dur="4s" repeatCount="indefinite" rotate="auto"/>
+        <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+      </circle>
 
-      <circle cx="900" cy="132" r="26" fill="#0F172A" stroke="#34D399" stroke-width="2"/>
+      <circle cx="340" cy="170" r="18" fill="#A78BFA" opacity="0.9">
+        <animate attributeName="r" values="18;22;18" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="620" cy="165" r="18" fill="#34D399" opacity="0.9">
+        <animate attributeName="r" values="18;22;18" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+
+      <circle cx="900" cy="132" r="26" fill="#0F172A" stroke="#34D399" stroke-width="2">
+        <animate attributeName="stroke-width" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="26;30;26" dur="2s" repeatCount="indefinite"/>
+      </circle>
       <text x="900" y="139" text-anchor="middle" fill="#E2E8F0" font-size="11" font-family="Arial" font-weight="700">AUDIO</text>
     </g>
 
+    <!-- AssemblyAI box with pulse -->
     <g>
-      <rect x="395" y="40" width="190" height="64" rx="18" fill="#0F172A" stroke="#7DD3FC" stroke-opacity="0.9"/>
+      <rect x="395" y="40" width="190" height="64" rx="18" fill="#0F172A" stroke="#7DD3FC" stroke-opacity="0.9">
+        <animate attributeName="stroke-opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+      </rect>
       <text x="490" y="66" text-anchor="middle" fill="#7DD3FC" font-size="12" font-family="Arial" font-weight="700">AssemblyAI</text>
       <text x="490" y="85" text-anchor="middle" fill="#E2E8F0" font-size="12" font-family="Arial">Voice Agent API</text>
 
-      <rect x="420" y="152" width="140" height="54" rx="16" fill="#0F172A" stroke="#A78BFA" stroke-opacity="0.9"/>
+      <rect x="420" y="152" width="140" height="54" rx="16" fill="#0F172A" stroke="#A78BFA" stroke-opacity="0.9">
+        <animate attributeName="stroke-opacity" values="0.9;1;0.9" dur="2.5s" repeatCount="indefinite"/>
+      </rect>
       <text x="490" y="177" text-anchor="middle" fill="#E2E8F0" font-size="12" font-family="Arial" font-weight="700">Tools + Memory</text>
       <text x="490" y="196" text-anchor="middle" fill="#A78BFA" font-size="11" font-family="Arial">JSON / Notion</text>
     </g>
 
+    <!-- Animated equalizer bars -->
     <g fill="#7DD3FC" opacity="0.9">
-      <rect x="130" y="112" width="24" height="12" rx="6"/>
-      <rect x="160" y="100" width="18" height="24" rx="6"/>
-      <rect x="182" y="90" width="18" height="34" rx="6"/>
+      <rect x="130" y="112" width="24" height="12" rx="6">
+        <animate attributeName="height" values="12;36;12" dur="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="112;88;112" dur="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="160" y="100" width="18" height="24" rx="6">
+        <animate attributeName="height" values="24;42;24" dur="0.5s" begin="0.1s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="100;82;100" dur="0.5s" begin="0.1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="182" y="90" width="18" height="34" rx="6">
+        <animate attributeName="height" values="34;50;34" dur="0.7s" begin="0.2s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="90;74;90" dur="0.7s" begin="0.2s" repeatCount="indefinite"/>
+      </rect>
     </g>
   </svg>
 </div>
