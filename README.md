@@ -1,78 +1,126 @@
 # E.V. — Voice-First Hackathon Command Center
 
-[![AssemblyAI Hackathon](https://img.shields.io/badge/AssemblyAI-Voice%20Agent%20Hackathon-00D4AA?style=for-the-badge&logo=assemblyai)](https://lablab.ai/ai-hackathons/assemblyai-voice-agent-hackathon)
-[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=2800&pause=700&color=7DD3FC&background=0D1117&lines=E.V.+Voice-First+Agent;STT+%2B+LLM+%2B+TTS;Task+Capture+without+Typing" alt="E.V. Voice-First Agent" />
+</p>
+
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-100%25-3776AB?logo=python&logoColor=white" />
+  <img alt="AssemblyAI" src="https://img.shields.io/badge/AssemblyAI-Voice%20Agent-7C3AED" />
+  <img alt="Hackathon" src="https://img.shields.io/badge/Hackathon-Sept+2026-0EA5E9" />
+  <img alt="Notion" src="https://img.shields.io/badge/Notion-Optional-000000?logo=notion&logoColor=white" />
+  <img alt="Vision" src="https://img.shields.io/badge/Vision-Claude-Optional-F59E0B" />
+</p>
+
+<div align="center">
+  <svg width="980" height="260" viewBox="0 0 980 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgGlow" x1="0" y1="0" x2="980" y2="260" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#0F172A"/>
+        <stop offset="0.5" stop-color="#111827"/>
+        <stop offset="1" stop-color="#0B1120"/>
+      </linearGradient>
+      <linearGradient id="wave" x1="40" y1="110" x2="900" y2="110" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#22D3EE"/>
+        <stop offset="0.35" stop-color="#60A5FA"/>
+        <stop offset="0.7" stop-color="#A78BFA"/>
+        <stop offset="1" stop-color="#34D399"/>
+      </linearGradient>
+    </defs>
+
+    <rect width="980" height="260" rx="26" fill="url(#bgGlow)"/>
+    <g opacity="0.18">
+      <circle cx="150" cy="130" r="120" fill="#38BDF8"/>
+      <circle cx="820" cy="150" r="150" fill="#A78BFA"/>
+      <circle cx="500" cy="40" r="90" fill="#34D399"/>
+    </g>
+
+    <path d="M60 134C130 134 130 76 200 76C270 76 270 170 340 170C410 170 410 92 480 92C550 92 550 165 620 165C690 165 690 96 760 96C830 96 830 132 900 132" stroke="url(#wave)" stroke-width="5" stroke-linecap="round"/>
+
+    <g>
+      <circle cx="80" cy="134" r="26" fill="#0F172A" stroke="#7DD3FC" stroke-width="2"/>
+      <text x="80" y="141" text-anchor="middle" fill="#E2E8F0" font-size="11" font-family="Arial" font-weight="700">MIC</text>
+
+      <circle cx="210" cy="76" r="18" fill="#22D3EE" opacity="0.9"/>
+      <circle cx="340" cy="170" r="18" fill="#A78BFA" opacity="0.9"/>
+      <circle cx="620" cy="165" r="18" fill="#34D399" opacity="0.9"/>
+
+      <circle cx="900" cy="132" r="26" fill="#0F172A" stroke="#34D399" stroke-width="2"/>
+      <text x="900" y="139" text-anchor="middle" fill="#E2E8F0" font-size="11" font-family="Arial" font-weight="700">AUDIO</text>
+    </g>
+
+    <g>
+      <rect x="395" y="40" width="190" height="64" rx="18" fill="#0F172A" stroke="#7DD3FC" stroke-opacity="0.9"/>
+      <text x="490" y="66" text-anchor="middle" fill="#7DD3FC" font-size="12" font-family="Arial" font-weight="700">AssemblyAI</text>
+      <text x="490" y="85" text-anchor="middle" fill="#E2E8F0" font-size="12" font-family="Arial">Voice Agent API</text>
+
+      <rect x="420" y="152" width="140" height="54" rx="16" fill="#0F172A" stroke="#A78BFA" stroke-opacity="0.9"/>
+      <text x="490" y="177" text-anchor="middle" fill="#E2E8F0" font-size="12" font-family="Arial" font-weight="700">Tools + Memory</text>
+      <text x="490" y="196" text-anchor="middle" fill="#A78BFA" font-size="11" font-family="Arial">JSON / Notion</text>
+    </g>
+
+    <g fill="#7DD3FC" opacity="0.9">
+      <rect x="130" y="112" width="24" height="12" rx="6"/>
+      <rect x="160" y="100" width="18" height="24" rx="6"/>
+      <rect x="182" y="90" width="18" height="34" rx="6"/>
+    </g>
+  </svg>
+</div>
 
 ![E.V. Demo](assets/demo.gif)
 
+> **Watch the demo:** [YouTube](https://youtube.com/your-demo-link) | [Loom](https://loom.com/your-demo-link) *(add links after recording)*
+
 Built for the [AssemblyAI Voice Agent Hackathon](https://lablab.ai/ai-hackathons/assemblyai-voice-agent-hackathon) (Sept 1–30, 2026).
 
-E.V. is a real-time voice agent, built entirely on AssemblyAI's **Voice Agent
-API** (one WebSocket = STT + turn detection + LLM + TTS + tool calling), that
-lets you capture tasks and notes hands-free while you're heads-down building —
-then gives you a spoken briefing on demand. Optionally, newly-added tasks
-mirror into an existing Notion workspace.
+E.V. is a real-time voice agent built entirely on AssemblyAI's Voice Agent API. One WebSocket handles speech-to-text, turn detection, LLM orchestration, tool calling, and text-to-speech, so you can keep your hands on the work and your attention in the moment.
 
-> **Watch the demo:** [YouTube](https://youtube.com/your-demo-link) | [Loom](https://loom.com/your-demo-link) *(add links after recording)*
+## Highlights
+
+- Real-time voice-first task capture without a keyboard
+- Single WebSocket pipeline for STT, turn detection, LLM orchestration, and TTS
+- Persistent memory for project context, notes, and remembered facts
+- Optional Notion sync and Claude-powered screen reading
+- Designed for hackathon demos and everyday quick planning loops
 
 ## Why this project
 
-Hackathon prep means juggling a dozen things across multiple projects at
-once, and reaching for a keyboard to jot down "remember to test the LoRa
-module before Thursday" breaks flow. E.V. is a voice-only capture layer for
-exactly that: talk to it, it listens, logs, and reports back — nothing to
-type, nothing to tab away to.
+Hackathon prep means juggling a dozen things at once. Reaching for a keyboard to type "remember to test the LoRa module before Thursday" breaks momentum. E.V. is a voice-first capture layer for tasks, notes, and project context that keeps you in flow.
 
-## What it does
+## What E.V. can do
 
-Talk to E.V. and it will:
+<div align="center">
+  <table>
+    <tr>
+      <td width="50%" valign="top">
+        <ul>
+          <li><strong>add_task</strong> — "Remind me to finish the SWAP writeup, high priority, due Friday"</li>
+          <li><strong>list_tasks</strong> — "What's still pending?"</li>
+          <li><strong>complete_task</strong> — "I finished the LoRa test"</li>
+          <li><strong>delete_task</strong> — "Forget that task"</li>
+          <li><strong>add_note</strong> — "Note: the sensor drifts above 40 degrees"</li>
+          <li><strong>delete_note</strong> — "Delete that note"</li>
+          <li><strong>undo_last</strong> — "Undo that"</li>
+        </ul>
+      </td>
+      <td width="50%" valign="top">
+        <ul>
+          <li><strong>search</strong> — "Did I note anything about sensor drift?"</li>
+          <li><strong>get_briefing</strong> — "What's on my plate today?"</li>
+          <li><strong>list_projects</strong> — "What's going on across my projects?"</li>
+          <li><strong>set_voice</strong> — "Switch to a deeper voice"</li>
+          <li><strong>end_session</strong> — "That's it for now"</li>
+          <li><strong>remember_fact</strong> — "Remember my LoRa module is a Core1262-HF"</li>
+          <li><strong>read_screen</strong> — "What does this error say?"</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
 
-- **`add_task`** — "Remind me to finish the SWAP writeup, high priority, due
-  Friday" → logged, with the relative date resolved into a real calendar date.
-- **`list_tasks`** — "What's still pending?" → reads them back.
-- **`complete_task`** — "I finished the LoRa test" → marks it done.
-- **`delete_task`** — "Actually, forget that task" → removed entirely
-  (different from completing it).
-- **`add_note`** — "Note: the sensor drifts above 40 degrees" → logged.
-- **`delete_note`** — "Delete that note" → removed entirely.
-- **`undo_last`** — "Undo that" / "oops, scratch that" right after adding
-  something → removes whatever was just added, no need to repeat it.
-- **`search`** — "Did I note anything about sensor drift?" → keyword search
-  across tasks and notes.
-- **`get_briefing`** — "What's on my plate today?" → a spoken summary of
-  pending tasks (highest priority first), anything overdue or due today,
-  and recent notes. E.V. also volunteers this proactively: if you have
-  overdue tasks, the very first thing it says on connect mentions them,
-  before you ask.
-- **`list_projects`** — "What's going on across my projects?" → tasks
-  grouped by project (SWAP, LoRa test, coursework, …) instead of one flat list.
-- **`set_voice`** — "Switch to a deeper voice" → E.V. reconnects with a
-  different TTS voice (12 available — American/British English).
-- **`end_session`** — "That's it for now" → ends the session cleanly
-  (sends `session.end`, skipping the billable 30s resume window) instead
-  of you having to Ctrl+C.
-- **`remember_fact`** — "Remember that my LoRa module is a Core1262-HF" →
-  saved permanently, and quietly loaded back into E.V.'s system prompt on
-  every future run, so it carries into later sessions without you having
-  to repeat yourself.
-- **`read_screen`** — "What does this error say?" → takes a screenshot and
-  answers, via a separate vision call to Claude. Optional — off by default.
+E.V. also proactively speaks overdue reminders on connect, gives project-aware briefings, and keeps long-term context in memory so facts persist across sessions.
 
-All of the voice pipeline runs through a single AssemblyAI WebSocket
-connection (STT, turn detection, LLM, TTS) — `read_screen` is the one
-exception: it makes its own separate call to a vision-capable model purely
-to describe the screenshot in text, since the Voice Agent API itself is
-audio-only. AssemblyAI's Voice Agent LLM is still what decides when to call
-it and what to say about the result out loud.
-
-> **Note on `set_voice`:** AssemblyAI's Voice Agent API binds the TTS voice
-> to the WebSocket connection at session start — it's immutable for the
-> life of that connection. So "switching voices" here means E.V. cleanly
-> ends the current session and opens a fresh one with the new voice,
-> which takes a second or two and starts a new conversation turn (task/note
-> data persists across the switch since it's all in local JSON — only the
-> live conversation context resets).
+> The core voice pipeline runs through a single AssemblyAI WebSocket. The only exception is `read_screen`, which makes a separate vision request to describe a screenshot.
 
 ## Architecture
 
@@ -100,50 +148,13 @@ flowchart LR
 
 | File | Purpose |
 |---|---|
-| `agent.py` | WebSocket session loop: streams mic audio, routes events, dispatches tool calls, handles voice-switch reconnects and clean session end |
-| `audio.py` | Mic capture / speaker playback at 24kHz 16-bit mono PCM |
-| `prompts.py` | E.V.'s system prompt (built fresh each session, injecting today's date and remembered facts) and its greeting (proactively mentions overdue tasks) |
-| `tools.py` | Tool schemas sent to the API + dispatcher that runs them |
-| `storage.py` | Local JSON persistence for tasks, notes, and remembered facts (`data/tasks.json`, `data/notes.json`, `data/memory.json`) |
-| `vision.py` | Optional `read_screen` support — screenshot capture + a Claude vision API call |
-| `notion_sync.py` | Optional, best-effort mirror of new tasks into a Notion database |
-
-## Setup
-
-**1. Audio backend**
-
-This uses `sounddevice` (PortAudio bindings) rather than PyAudio, specifically
-because PyAudio needs a C compiler on Windows (Microsoft Visual C++ Build
-Tools) to build its native extension whenever no prebuilt wheel matches your
-Python version — a common wall on newer Python releases. `sounddevice` ships
-PortAudio as a bundled binary and installs cleanly with plain `pip install`
-on Windows, macOS, and Linux, no compiler needed.
-
-**2. Python environment**
-
-```bash
-python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # macOS/Linux
-
-pip install -r requirements.txt
-```
-
-**3. API key**
-
-Copy `.env.example` to `.env` and fill in your AssemblyAI API key (from your
-[AssemblyAI dashboard](https://www.assemblyai.com/app) — you need Voice
-Agent API access). Notion and Anthropic variables are optional; leave them
-blank to run with just tasks/notes/memory on local JSON.
-
-**4. Run it**
-
-```bash
-python agent.py
-```
-
-Speak once you see `Session ready`. Use headphones if possible — speaker
-playback into an open mic can trigger false interruptions.
+| `agent.py` | Main WebSocket session loop: streams mic audio, routes events, dispatches tools, handles reconnects and clean session exit |
+| `audio.py` | Mic capture and speaker playback using 24kHz 16-bit mono PCM |
+| `prompts.py` | Builds the session system prompt, injects memory, and creates the proactive greeting |
+| `tools.py` | Tool schemas plus the dispatcher that executes commands |
+| `storage.py` | Local JSON persistence for tasks, notes, and remembered facts |
+| `vision.py` | Optional screenshot capture and Claude-based screen reading |
+| `notion_sync.py` | Best-effort sync of new tasks into a Notion database |
 
 ## Features in Action
 
@@ -157,84 +168,37 @@ playback into an open mic can trigger false interruptions.
 
 *Record short 5-10s GIFs for each feature using [ScreenToGif](https://www.screentogif.com/) or [Peek](https://github.com/phw/peek) and place in `assets/` folder.*
 
-## Demo script (for the submission video)
+## Setup
 
-1. "Hey E.V." → greeting plays (mentions overdue tasks first, if any).
-2. "Add a task: test the dual LoRa module, high priority, due tomorrow." →
-   confirms, with the due date resolved.
-3. "Add a note: sensor readings drift above 40 degrees Celsius." → confirms.
-4. "Undo that." → the note you just added is removed — a quick safety-net
-   demo.
-5. "Add a note: sensor readings drift above 40 degrees Celsius." → add it
-   back for real.
-6. "What's on my plate today?" → spoken briefing, calls out anything overdue.
-7. "What's going on across my projects?" → project-by-project breakdown.
-8. "Did I note anything about sensor drift?" → search finds the note.
-9. "Remember that my LoRa module is a Waveshare Core1262-HF." → saved.
-10. "Switch to a deeper voice." → E.V. reconnects and speaks the rest in a
-    different voice.
-11. *(optional, needs `ANTHROPIC_API_KEY`)* "What's on my screen right now?"
-    → screenshot taken, described out loud.
-12. "I finished testing the LoRa module." → marks it complete.
-13. "What's still pending?" → reads back the updated list.
-14. "That's it for now." → ends the session cleanly.
-15. *(optional)* show `data/tasks.json` updating live, and/or the Notion
-    database receiving the new row. Restart the agent and ask "what do you
-    know about me?" to show the remembered fact carrying over.
+### 1) Audio backend
 
-Keep the video under 3–5 minutes: show the working loop end-to-end rather
-than narrating the code.
+This uses `sounddevice` (PortAudio bindings) instead of PyAudio. That matters because PyAudio often requires Microsoft Visual C++ Build Tools on Windows when no matching wheel exists. `sounddevice` is usually the smoother option for local microphone/speaker setups.
 
-## Submission checklist — lablab.ai (deadline Sept 30, 2026)
+### 2) Python environment
 
-- [ ] Working voice agent demo video (screen + audio, shows real interaction)
-- [ ] Public GitHub repo (push this project, keep `.env` out of it — already
-      gitignored)
-- [ ] Project write-up: problem, what you built, how AssemblyAI's Voice
-      Agent API is used, what's novel (voice-first + tool calling into a
-      real personal workflow, optional Notion sync)
-- [ ] Submit on the hackathon page before Sept 30, 2026
-- [ ] Mention specifically which AssemblyAI features you used (STT, turn
-      detection, LLM tool calling, TTS voice) — judges are evaluating
-      "meaningful demonstration of voice AI technology," not just that it
-      runs
+```bash
+python -m venv venv
+venv\Scripts\activate        # Windows
+# source venv/bin/activate   # macOS/Linux
 
-## Optional: Notion sync setup
+pip install -r requirements.txt
+```
 
-1. Create an integration at <https://www.notion.so/my-integrations>, copy
-   its secret into `NOTION_API_KEY` in `.env`.
-2. Open your target Notion database → `•••` menu → Connections → add your
-   integration.
-3. Copy the database ID from its URL into `NOTION_TASKS_DB_ID`.
-4. The database needs a title column (any name), and optionally a
-   `Priority` select property and a `Project` text property — both are
-   filled automatically if present, skipped if not.
+### 3) API keys
 
-If these aren't set, `notion_sync.py` is a no-op and the agent runs purely
-on local JSON — safe for a live demo regardless of whether Notion is wired
-up in time.
+```bash
+cp .env.example .env
+```
 
-## Optional: screen reading (`read_screen`) setup
+Add your AssemblyAI API key to `.env`. Notion and Anthropic keys are optional — if they're blank, the agent still works using local JSON storage.
 
-1. Get an API key at <https://console.anthropic.com/>.
-2. Put it in `ANTHROPIC_API_KEY` in `.env`.
-3. That's it — `read_screen` takes a screenshot with Pillow and sends it to
-   `claude-haiku-4-5-20251001` (fast/cheap; override with
-   `ANTHROPIC_VISION_MODEL` if you want a different model) for a short
-   spoken description.
+### 4) Run it
 
-If `ANTHROPIC_API_KEY` isn't set, `read_screen` just says so out loud
-instead of crashing the session.
+```bash
+python agent.py
+```
 
-## Extending it
-
-Ideas if there's time left before the deadline:
-- Swap the JSON store for real Notion as the source of truth (read-through
-  `list_tasks`, not just write-through `add_task`).
-- Push actual OS/calendar notifications for `due_date`s, not just a mention
-  in the spoken briefing or the proactive greeting.
-- Deploy via AssemblyAI's browser or Twilio channel instead of running
-  locally, for a shareable demo link.
+Speak once you see `Session ready`. Use headphones if possible so the speaker output does not bounce back into the mic.
 
 ## Quick Start (Animated)
 
@@ -263,6 +227,68 @@ python agent.py
 
 *Record a 15-30s GIF of the full setup-to-run flow.*
 
+## Demo flow
+
+1. "Hey E.V." → greeting plays, mentioning overdue tasks first if any.
+2. "Add a task: test the dual LoRa module, high priority, due tomorrow." → task is created.
+3. "Add a note: sensor readings drift above 40 degrees Celsius." → note is logged.
+4. "Undo that." → the note is removed immediately.
+5. "Add a note: sensor readings drift above 40 degrees Celsius." → add it back for real.
+6. "What's on my plate today?" → spoken briefing with overdue tasks called out.
+7. "What's going on across my projects?" → project-by-project breakdown.
+8. "Did I note anything about sensor drift?" → search finds the note.
+9. "Remember that my LoRa module is a Waveshare Core1262-HF." → memory persists.
+10. "Switch to a deeper voice." → session reconnects with a fresh voice.
+11. *(optional)* "What's on my screen right now?" → screenshot is captured and described aloud.
+12. "I finished testing the LoRa module." → task is marked complete.
+13. "What's still pending?" → updated list is read back.
+14. "That's it for now." → session ends cleanly.
+15. *(optional)* show `data/tasks.json` or the Notion database updating live.
+
+Keep the final video under 3–5 minutes and focus on the working loop end-to-end rather than narrating the code.
+
+## Troubleshooting
+
+- No mic input: confirm your microphone is connected and selected in your OS audio settings.
+- Session never starts: verify that `ASSEMBLYAI_API_KEY` is populated in `.env`.
+- Audio output is echoing: use headphones instead of speakers while testing.
+- Tool calls fail: check that your `.env` contains the required optional keys for Notion or Anthropic features.
+- Tasks not persisting: confirm the `data/` directory is writable and that `storage.py` has permission to create JSON files.
+
+## Submission checklist
+
+- [ ] Working voice agent demo video with both screen and audio
+- [ ] Public GitHub repo with `.env` kept out of version control
+- [ ] Project write-up explaining the problem, solution, and AssemblyAI usage
+- [ ] Submit before Sept 30, 2026
+- [ ] Explicitly mention STT, turn detection, LLM tool calling, and TTS voice usage
+
+## Optional: Notion sync
+
+1. Create an integration at <https://www.notion.so/my-integrations>
+2. Copy the integration secret into `NOTION_API_KEY`
+3. Open the target database and connect the integration
+4. Copy the database ID into `NOTION_TASKS_DB_ID`
+5. Optional database properties: `Priority` and `Project`
+
+If these values aren't configured, `notion_sync.py` becomes a no-op and E.V. still runs perfectly from local JSON storage.
+
+## Optional: screen reading (`read_screen`)
+
+1. Get an API key at <https://console.anthropic.com/>
+2. Put it in `ANTHROPIC_API_KEY` in `.env`
+3. That's it — E.V. captures a screenshot and sends it to Claude for a short spoken description
+
+If the key is not present, E.V. simply says it cannot read the screen instead of crashing the session.
+
+## Extending it
+
+Ideas if time remains before the deadline:
+
+- Replace the JSON store with Notion as the real source of truth
+- Push OS or calendar notifications for due dates
+- Deploy via AssemblyAI browser or Twilio channels for a shareable demo link
+
 ## Contributing
 
 PRs welcome! Ideas:
@@ -278,6 +304,5 @@ MIT — see [LICENSE](LICENSE) for details.
 ---
 
 <p align="center">
-  <b>Built with ❤️ for the AssemblyAI Voice Agent Hackathon</b><br>
-  <sub>Team <b>Barge-In</b> • Deadline: Sept 30, 2026</sub>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&text=E.V.%20READY&fontSize=42&height=140&width=600&fontColor=E2E8F0&backgroundColor=0D1117" alt="E.V. ready badge" />
 </p>
